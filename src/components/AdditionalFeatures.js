@@ -7,11 +7,11 @@ const AdditionalFeatures = props => {
     <div className="content">
       <h4>Additional Features</h4>
       {props.additionalFeatures.length ? (
-        <ol type="1">
+        <ul className="no-dots" type="1">
           {props.additionalFeatures.map(item => (
             <AdditionalFeature key={item.id} feature={item} />
           ))}
-        </ol>
+        </ul>
       ) : (
         <p>Nice looking car!</p>
       )}

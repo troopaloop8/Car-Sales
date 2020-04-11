@@ -4,7 +4,7 @@ import { addFeature } from "../actions";
 
 const AdditionalFeature = props => {
   return (
-    <li>
+    <li className="no-dots">
       {/* Add an onClick that will let you add a feature to your car */}
       <button className="button" onClick={() => props.addFeature(props.feature)}>Add</button>
       {props.feature.name} (+{props.feature.price})
@@ -14,15 +14,15 @@ const AdditionalFeature = props => {
 
 
 
-const mapStateToProps = state => {
-  console.log("jt: AddedFeature.js: mapPropToState: state: ", state);
-  return {
+// const mapStateToProps = state => {
+//   console.log("jt: AddedFeature.js: mapPropToState: state: ", state);
+//   return {
     
-  };
-};
+//   };
+// };
 
 
 export default connect(
-  mapStateToProps,
+  null,
   { addFeature }
 )(AdditionalFeature);

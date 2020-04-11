@@ -1,4 +1,4 @@
-import { BUY_FEATURE, REMOVE_FEATURE } from "../actions";
+
 
 const initialState = {
     additionalPrice: 0,
@@ -15,32 +15,32 @@ const initialState = {
       { id: 3, name: 'Premium sound system', price: 500 },
       { id: 4, name: 'Rear spoiler', price: 250 }
     ]
-  };
-
-
-export const reducer = (state = initialState, action) => {
+  }
+  
+  export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case BUY_FEATURE: 
-            return {
-                ...state,
-                additionalPrice: state.additionalPrice + action.payload.price,
-                car: {
-                    ...state.car,
-                    features: [...state.car.features, action.payload]
-                },
-                additionalFeatures: state.additionalFeatures.filter(feature => feature.name !== action.payload.name)
-            }
-        case REMOVE_FEATURE: 
-            return {
-                ...state,
-                additionalPrice: state.additionalPrice - action.payload.price,
-                car: {
-                    ...state.car,
-                    features: state.car.features.filter(feature => feature.name !== action.payload.name)
-                },
-                additionalFeatures: [...state.additionalFeatures, action.payload]
-            }
-        default:
-            return state;
+      case 'ADD_FEATURE':
+        return {
+          ...state,
+          additionalPrice: state.additionalPrice + action.payload.price,
+          car: {
+            ...state.car,
+            features: [...state.car.features, action.payload]
+          },
+          additionalFeatures: state.additionalFeatures.filter(feature => feature.name !== action.payload.name)
+        }
+      case 'REMOVE_FEATURE':
+        
+        return {
+          ...state,
+          additionalPrice: state.additionalPrice - action.payload.price,
+          car: {
+            ...state.car,
+            features: state.car.features.filter(feature => feature.name !== action.payload.name)
+          },
+          additionalFeatures: [...state.additionalFeatures, action.payload]
+        }
+      default:
+        return state;
     }
-}
+  }

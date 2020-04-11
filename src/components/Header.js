@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 
 const Header = props => {
   return (
-    <>
-      <figure className="image is-128x128">
+    <div className="title">
+      <figure className="image is-5by3">
         <img src={props.car.image} alt={props.car.name} />
       </figure>
-      <h2>{props.car.name}</h2>
-      <p>Amount: ${props.car.price}</p>
-    </>
+      <h2 className="black-text">{props.car.name}</h2>
+      <h2 className="black-text">Amount: ${props.car.price}</h2>
+    </div>
   );
 };
 

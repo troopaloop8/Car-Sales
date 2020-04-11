@@ -1,9 +1,9 @@
-export const BUY_FEATURE = "BUY_FEATURE";
+export const ADD_FEATURE = "ADD_FEATURE";
 export const REMOVE_FEATURE = "REMOVE_FEATURE";
 
 export const addFeature = feature => {
     return { 
-        type: BUY_FEATURE,
+        type: ADD_FEATURE,
         payload: feature
      };
 };
@@ -11,6 +11,6 @@ export const addFeature = feature => {
 export const removeFeature = feature => {
     return { 
         type: REMOVE_FEATURE,
-        paload: feature
+        payload: feature
      };
 };
