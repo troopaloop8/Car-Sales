@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from "react-redux";
 import AdditionalFeature from './AdditionalFeature';
 
 const AdditionalFeatures = props => {
@@ -18,4 +19,15 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default AdditionalFeatures;
+const mapStateToProps = state => {
+  console.log("jt: AdditionalFeatures.js: mapPropToState: state: ", state);
+  return {
+    additionalFeatures: state.additionalFeatures
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  {}
+)(AdditionalFeatures);
+
